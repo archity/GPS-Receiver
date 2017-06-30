@@ -1,24 +1,25 @@
-% phi = input('Enter phase: ');
-% fc = input('Enter fc: ');
-% flo = input('ENter flo: ');                              
-phi = 0;
-fc = 5*10^6;
-flo = 5*10^6 + 20;
+function[ calcFreq ] = FrequencyFind_FLL(initSine, sinMap, cosMap, sinMap2, cosMap2)
 
-fs = 12*10^6;
 %t = [0:(1/fs):(1000/fs-1/fs)];
+fs = 8*10^6;    % sampling frequency
 %%
 
-func1 = @(t)sind(360*fc*t + phi).*cosd(360*flo*t);
-func2 = @(t)sind(360*fc*t + phi).*sind(360*flo*t);
-
-Ips1 = integral(func2, 0, 1000/fs);
-Ips2 = integral(func2, 1000/fs, 2000/fs);
-Qps1 = integral(func1, 0, 1000/fs);
-Qps2 = integral(func1, 1000/fs, 2000/fs);
+Q1 = initSine.*cosMap;   %cosd(360*fc*t + phase);
+I1 = initSine.*sinMap;   %sind(360*fc*t + phase);
+Q2 = initSine.*cosMap2;   %cosd(360*fc*t + phase);
+I2 = initSine.*sinMap2;   %sind(360*fc*t + phase);
+Qps1 = sum(Q1);
+Ips1 = sum(I1);
+Qps2 = sum(Q2);
+Ips2 = sum(I2);
 %%
 dot = Ips1*Ips2 + Qps1*Qps2;
 cross = Ips1*Qps2 - Ips2*Qps1;
 
-calcFreq = atan2d(dot, cross)/(1000/fs)
+calcFreq = atan2(dot, cross)/(8000/fs);
+%%
+%phi2 = atan2d(Qps2,Ips2)
+%phi1 = atan2d(Qps1,Ips1)
 
+%calcFreq2 = (phi2-phi1)/((4000/fs)*(2*pi))
+end
