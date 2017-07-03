@@ -17,9 +17,5 @@ dot = Ips1*Ips2 + Qps1*Qps2;
 cross = Ips1*Qps2 - Ips2*Qps1;
 
 calcFreq = atan2(dot, cross)/(8000/fs);
-%%
-%phi2 = atan2d(Qps2,Ips2)
-%phi1 = atan2d(Qps1,Ips1)
 
-%calcFreq2 = (phi2-phi1)/((4000/fs)*(2*pi))
 end
