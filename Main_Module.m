@@ -12,7 +12,7 @@ for n = 1:1:100
     calcFreq = FrequencyFind_FLL(initSine, sinMap, cosMap, sinMap2, cosMap2);   % FLL
     outputVar1(1, n) = calcPhase;   %Testing
     outputVar2(1, n) = calcFreq;    %Testing
-    [phase, freq, ap] = DigitalLoopFilter(ap, calcPhase, calcFreq, T);          % Filter
+    [phase, freq, ap, interOP1, interOP2] = DigitalLoopFilter(ap, calcPhase, calcFreq, T, n);% Filter
     [sinMap, cosMap, sinMap2, cosMap2] = Carrier_NCO(phase, freq); % NCO
     outputVar3(1, n) = phase;         %Testing
 end
