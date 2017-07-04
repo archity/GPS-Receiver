@@ -8,5 +8,10 @@ The main processes which typically occur at the receiver side are as follows:
 
 Tracking part further consists of code and carrier tracking. The project focusses on the tracking part, more specifically, carrier tracking.
 
-## Block diagram of Carrier Tracking
+## Block Diagram of Carrier Tracking
 ![alt text](https://github.com/archity/GPS-Receiver/blob/master/Images/Image_CarrierTracking.png)
+
+___
+
+## Block Diagram of Loop Filter
+![alt text](https://github.com/archity/GPS-Receiver/blob/master/Images/Image_LoopFilter.png)
