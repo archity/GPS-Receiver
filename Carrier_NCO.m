@@ -12,4 +12,3 @@ function [ sinMap, cosMap, sinMap2, cosMap2 ] = Carrier_NCO( phaseDev, freqDev )
     cosMap2 = cos(2*pi*(fc + freqDev)*t2 + phaseDev);
 
 end
-
