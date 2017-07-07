@@ -1,9 +1,9 @@
-function [ calcPhase ] = PhaseFind_PLL(initSine, sinMap, cosMap)                           
+function [ calcPhase ] = PhaseFind_PLL(initSine, sinMap, cosMap, n)                           
 
 %-------------------------------------------------------------------------
 %---------------------------Main working logic----------------------------
-Q = initSine.*cosMap;   %cosd(360*fc*t + phase);
-I = initSine.*sinMap;   %sind(360*fc*t + phase);
+Q = initSine((16000*(n-1))+1 : 16000*n).*cosMap((16000*(n-1))+1 : 16000*n);
+I = initSine((16000*(n-1))+1 : 16000*n).*sinMap((16000*(n-1))+1 : 16000*n);
 Qps = sum(Q);
 Ips = sum(I);
 %-------------------------------------------------------------------------

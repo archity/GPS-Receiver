@@ -1,12 +1,12 @@
 function [final_PLL_OP, final_FLL_OP, a, b] = DigitalLoopFilter(ap, ap2, x, y, T)
 
-Bn = 15;        % Noise bandwidth 20Hz (taken arbitrarily)
+Bn = 15;        % Noise bandwidth 15Hz (taken arbitrarily)
 wp = Bn/0.53;   % Loop filter natural radian frequency
-a2 = 0.02; % second order coeff. term
+a2 = 0.02;      % second order coeff. term
 
-Bn2 = 12;        % Noise bandwidth 20Hz (taken arbitrarily)
-wp2 = Bn2/0.53;   % Loop filter natural radian frequency
-a22 = 0.02; % second order coeff. term
+Bn2 = 12;       % Noise bandwidth 12Hz (taken arbitrarily)
+wp2 = Bn2/0.53; % Loop filter natural radian frequency
+a22 = 0.02;     % second order coeff. term
 
 %fllAssist = T*y*(11/0.25);  % T * w0f * (Bn/0.25)
 [OP1, a] = Bilinear_Integrator(x, T, ap);
