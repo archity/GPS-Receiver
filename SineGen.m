@@ -3,7 +3,7 @@ function [ sinGenMap ] = SineGen( phaseDev, freqDev )
 %   Detailed explanation goes here
     
     fs = 8*10^6;    % sampling frequency
-    t = 0:(1/fs):(16000/fs-1/fs); % one way of varying time.
+    t = 0:(1/fs):(1600000/fs-1/fs); % one way of varying time.
     fc = 2*10^6;
     sinGenMap = sin(2*pi*(fc + freqDev)*t + phaseDev);
     %values of freqDev and phaseDev will be passed from the main module.
