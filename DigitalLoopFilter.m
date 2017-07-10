@@ -1,10 +1,10 @@
 function [final_PLL_OP, final_FLL_OP, a, b] = DigitalLoopFilter(ap, ap2, x, y, T)
 
-Bn = 15;        % Noise bandwidth 15Hz (taken arbitrarily)
+Bn = 10;
 wp = Bn/0.53;   % Loop filter natural radian frequency
 a2 = 0.02;      % second order coeff. term
 
-Bn2 = 12;       % Noise bandwidth 12Hz (taken arbitrarily)
+Bn2 = 10;
 wp2 = Bn2/0.53; % Loop filter natural radian frequency
 a22 = 0.02;     % second order coeff. term
 
