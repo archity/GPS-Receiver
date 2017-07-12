@@ -12,5 +12,5 @@ function [ calcPhase ] = PhaseFind_PLL(initSine, sinMap, cosMap, n)
     Qps = sum(Q)/length(Q); % ]Sum and normalize
     Ips = sum(I)/length(I); % ]
     %-------------------------------------------------------------------------
-    calcPhase = atan(Qps/Ips);
+    calcPhase = atan2(Qps, Ips);
 end
